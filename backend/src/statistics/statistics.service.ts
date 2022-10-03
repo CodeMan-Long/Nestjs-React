@@ -34,7 +34,7 @@ export class StatisticsService {
     return statistics;
   }
 
-  async remove() {
+  async removeAll() {
     await this.statisticRepository.nativeDelete({});
     return true;
   }

@@ -17,7 +17,7 @@ export class StatisticsController {
   }
 
   @Delete()
-  remove() {
-    return this.statisticsService.remove();
+  removeAll() {
+    return this.statisticsService.removeAll();
   }
 }

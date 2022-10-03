@@ -16,4 +16,8 @@ export class Statistic {
 
   @Property({ default: 0 })
   cost: number;
+
+  constructor(date: Date) {
+    this.date = date;
+  }
 }

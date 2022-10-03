@@ -8,12 +8,12 @@ export class Statistic {
   @Property()
   date: Date;
 
-  @Property()
+  @Property({ default: 0 })
   views: number;
 
-  @Property()
+  @Property({ default: 0 })
   clicks: number;
 
-  @Property()
+  @Property({ default: 0 })
   cost: number;
 }

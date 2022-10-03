@@ -1,15 +1,6 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete, Query } from '@nestjs/common';
 import { StatisticsService } from './statistics.service';
 import { CreateStatisticDto } from './dto/create-statistic.dto';
-import { UpdateStatisticDto } from './dto/update-statistic.dto';
 
 @Controller('statistics')
 export class StatisticsController {
@@ -21,25 +12,12 @@ export class StatisticsController {
   }
 
   @Get()
-  findAll() {
-    return this.statisticsService.findAll();
+  findAll(@Query('from') from: Date, @Query('to') to: Date) {
+    return this.statisticsService.findAll(from, to);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.statisticsService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateStatisticDto: UpdateStatisticDto,
-  ) {
-    return this.statisticsService.update(+id, updateStatisticDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.statisticsService.remove(+id);
+  @Delete()
+  remove() {
+    return this.statisticsService.remove();
   }
 }

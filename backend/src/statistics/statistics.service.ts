@@ -4,7 +4,6 @@ import { InjectRepository } from '@mikro-orm/nestjs';
 import { wrap } from '@mikro-orm/core';
 
 import { CreateStatisticDto } from './dto/create-statistic.dto';
-import { UpdateStatisticDto } from './dto/update-statistic.dto';
 import { Statistic } from './entities/statistic.entity';
 
 @Injectable()
@@ -23,19 +22,20 @@ export class StatisticsService {
     return statistic;
   }
 
-  findAll() {
-    return `This action returns all statistics`;
+  async findAll(from: Date, to: Date) {
+    const statistics = await this.statisticRepository
+      .createQueryBuilder('a')
+      .select('*')
+      .where({
+        $and: [{ date: { $gt: from } }, { date: { $lt: to } }],
+      })
+      .getResult();
+
+    return statistics;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} statistic`;
-  }
-
-  update(id: number, updateStatisticDto: UpdateStatisticDto) {
-    return `This action updates a #${id} statistic`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} statistic`;
+  async remove() {
+    await this.statisticRepository.nativeDelete({});
+    return true;
   }
 }

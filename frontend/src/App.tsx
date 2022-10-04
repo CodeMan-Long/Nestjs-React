@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import './App.css';
 import Home from './components/Home';
+import SaveForm from './components/SaveForm';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <h1>Statistics App</h1>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="save" element={<Home />} />
+        <Route path="save" element={<SaveForm />} />
         <Route path="view" element={<Home />} />
       </Routes>
     </div>

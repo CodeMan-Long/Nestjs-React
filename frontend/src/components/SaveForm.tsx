@@ -41,7 +41,7 @@ export default function SaveForm() {
       views, clicks, cost,
     };
 
-    await axios.post(`${process.env.REACT_APP_API_URL}/statistics`, payload);
+    await axios.post(`${process.env.REACT_APP_API_URL}/api/statistics`, payload);
 
     setLoading(false);
   }

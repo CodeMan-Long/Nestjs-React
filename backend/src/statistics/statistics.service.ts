@@ -27,7 +27,7 @@ export class StatisticsService {
       .createQueryBuilder('a')
       .select('*')
       .where({
-        $and: [{ date: { $gt: from } }, { date: { $lt: to } }],
+        $and: [{ date: { $gte: from } }, { date: { $lte: to } }],
       })
       .getResult();
 

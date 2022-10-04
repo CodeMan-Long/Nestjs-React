@@ -12,11 +12,11 @@ import axios from 'axios';
 import dayjs, { Dayjs } from 'dayjs';
 
 export default function SaveForm() {
-  const [loading, setLoading] = useState(false);
-  const [date, setDate] = useState<Dayjs | null>(dayjs());
-  const [views, setViews] = useState(0);
-  const [clicks, setClicks] = useState(0);
-  const [cost, setCost] = useState(0);
+  const [ loading, setLoading ] = useState(false);
+  const [ date, setDate ] = useState<Dayjs | null>(dayjs());
+  const [ views, setViews ] = useState(0);
+  const [ clicks, setClicks ] = useState(0);
+  const [ cost, setCost ] = useState(0);
 
   const handleViewsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setViews(parseInt(e.target.value));

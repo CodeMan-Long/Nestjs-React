@@ -10,6 +10,7 @@ It uses Mikro-ORM to manage the MySQL database.
 POST endpoint accepts the input values and stores them to MySQL database with Mikro-ORM.
 GET endpoint accepts the date range and searches the statistics within date range and returns them.
 DELETE endpoint deletes all records of statistics table.
+The pagination for GET endpoint is not implemented due to the lack of time.
 
 ## Frontend application
 

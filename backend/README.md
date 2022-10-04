@@ -7,7 +7,8 @@ Statistics backend application written by Nest.js
 ```bash
 $ npm install
 ```
-Copy .env.development to .env and replace the values with yours.
+Replace the values in .env.development with yours to run the app in development mode.
+Copy .env.development to .env and replace the values with yours to run the app in production mode.
 
 ## Migration
 
@@ -30,3 +31,7 @@ $ npm run start:dev
 ```
 
 The app will be running on PORT 3000.
+
+## API documentation
+
+If you run the app, you can see the API swagger documentation in http://localhost:3000/docs

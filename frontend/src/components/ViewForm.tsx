@@ -7,7 +7,8 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import Box from '@mui/material/Box';
 import LoadingButton from '@mui/lab/LoadingButton';
-import SaveIcon from '@mui/icons-material/Save';
+import SearchIcon from '@mui/icons-material/Search';
+import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import dayjs, { Dayjs } from 'dayjs';
 import { StatisticsContext } from "../AppContext";
@@ -103,7 +104,7 @@ export default function SaveForm() {
         <LoadingButton
           loading={loadingView}
           loadingPosition="start"
-          startIcon={<SaveIcon />}
+          startIcon={<SearchIcon />}
           variant="contained"
           sx={{ m: 0.5 }}
           onClick={handleView}
@@ -114,7 +115,7 @@ export default function SaveForm() {
         <LoadingButton
           loading={loadingReset}
           loadingPosition="start"
-          startIcon={<SaveIcon />}
+          startIcon={<DeleteIcon />}
           variant="contained"
           sx={{ m: 0.5 }}
           onClick={handleReset}
